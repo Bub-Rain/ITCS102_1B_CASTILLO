@@ -1,1 +1,3 @@
-# ITCS102_1B_CASTILLO.Python-Activities
+#ITCS102 - Fundamentals Of Computer Programming
+#Lev Rain P. Castillo
+#BSIT-1B
