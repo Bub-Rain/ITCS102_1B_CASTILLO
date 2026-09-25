@@ -32,7 +32,7 @@ if Has_business == True:
 
         else:
 
-            Base_fee_rate1 = 0.3
+            Base_fee_rate1 = 0.03
             Max_loan_limit = Annual_revenue * 3
 
 
@@ -51,7 +51,7 @@ if Has_business == True:
 
         else:
 
-            Base_fee_rate2 = 0.35
+            Base_fee_rate2 = 0.035
             Base_fee_rate = Base_fee_rate1 + Base_fee_rate2
 
 
