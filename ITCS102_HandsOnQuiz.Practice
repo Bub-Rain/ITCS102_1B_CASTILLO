@@ -1,0 +1,91 @@
+# SMALL BUSINESS LOANING SYSTEM
+
+Owner_name = int(input("Enter the owner's name ---> ")) 
+Owner_age = int(input("Enter the owner's age ---> "))
+
+Has_business = bool(input("Do you have a business? (True/Leave it blank) ---> "))
+
+if Has_business == True:
+
+    Years_in_business = int(input("How many years have you been in business? ---> "))
+
+    if Years_in_business >= 2:
+
+        Monthly_revenue = int(input("What is your monthly revenue? ---> "))
+        Annual_revenue = Monthly_revenue * 12
+
+        Has_defaults = int(input("Do you have any outstanding debts/loans? (1 = Yes, 0 = No) ---> "))
+
+        Collateral_name = input("What is your collateral? ---> ")
+        Collateral_value = int(input("What is the value of your collateral ---> "))
+
+        cred_score = int(input("What is your credit score? ---> "))
+
+        print("____________________________________________")
+
+        # TIER 1
+
+        if Annual_revenue >= 500000:
+
+            Max_loan_limit = Annual_revenue * 3
+            Base_fee_rate1 = 0.015
+
+        else:
+
+            Base_fee_rate1 = 0.3
+            Max_loan_limit = Annual_revenue * 3
+
+
+        # 5000 DIVISIBILITY FEE
+
+        if Max_loan_limit % 5000 != 0:
+            Max_loan_limit = Max_loan_limit + 250
+
+
+        # TIER 2
+
+        if Collateral_value >= 3 * Monthly_revenue:
+
+            Base_fee_rate2 = 0.02
+            Base_fee_rate = Base_fee_rate1 + Base_fee_rate2
+
+        else:
+
+            Base_fee_rate2 = 0.35
+            Base_fee_rate = Base_fee_rate1 + Base_fee_rate2
+
+
+        # TIER 3
+
+        if cred_score < 620:
+
+            print("Access Denied: Inevitable")
+
+        else:
+
+            print("Loan assessment passed.")
+
+            print("____________________________________________")
+
+            print("Owner name --->", Owner_name)
+            print("Owner age --->", Owner_age)
+            print("Years in business --->", Years_in_business)
+            print("Monthly revenue --->", Monthly_revenue)
+            print("Annual revenue --->", Annual_revenue)
+            print("Outstanding debts/loans --->", Has_defaults)
+            print("Collateral --->", Collateral_name)
+            print("Collateral value --->", Collateral_value)
+            print("Credit score --->", cred_score)
+
+            print("____________________________________________")
+
+            print("Maximum loan limit --->", Max_loan_limit)
+            print("Base fee rate --->", Base_fee_rate * 100, "%")
+
+    else:
+
+        print("Loan denied. Business must be at least 2 years old.")
+
+else:
+
+    print("Loan denied. Applicant must have a business.")
