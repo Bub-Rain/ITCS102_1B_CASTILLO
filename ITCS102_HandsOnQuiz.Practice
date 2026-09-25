@@ -65,6 +65,15 @@ if Has_business == True:
 
             print("Loan assessment passed.")
 
+         #TIER 4 
+
+          if Years_in_business >= 5:
+              Base_fee_rate3 = 0.015
+
+          Else:
+
+              Base_fee_rate1 = 0.03
+
             print("____________________________________________")
 
             print("Owner name --->", Owner_name)
